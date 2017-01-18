@@ -10,12 +10,12 @@
             //Controller Part  
             app.controller("CarController", function($scope, $http) {  
            
-                var link = 'http://localhost:8080/carfleet/'; 
+                var link = 'http://localhost:8100/cfsh'
                 $scope.cars = [];  
                 $scope.carForm = {  
                     id : -1,  
-                    name : "",  
-                    registration : ""  
+                    carName : "",  
+                    carRegistration : ""  
                 };  
            
                 //Now load the data from server  
@@ -27,15 +27,19 @@
                 $scope.submitCar = function() {  
            
                     var method = "";  
-                    var url = "";  
+                    var url = ""; 
+                    console.log($scope.car);
+                    console.log($scope.carForm);
                     if ($scope.carForm.id == -1) {  
                         //Id is absent in form data, it is create new Car operation  
+                        console.log('post');
                         method = "POST";  
-                        url = 'rest/cars';  
+                        url = link+'/addCar';  
                     } else {  
                         //Id is present in form data, it is edit Car operation  
+                        console.log('put');
                         method = "PUT";  
-                        url = 'rest/cars';  
+                        url = link+'/updateCar';  
                     }  
            
                     $http({  
@@ -52,24 +56,28 @@
                 $scope.deleteCar = function(car) {  
                     $http({  
                         method : 'DELETE',  
-                        url : link+'rest/cars/' + car.id  
+                        url : link+'/deleteCar/' + car.id ,
+                        headers:{
+                            'Content-Type' : 'application/json'  
+                        }
+                    
                     }).then(_success, _error);  
                 };  
    
              // In case of edit, populate form fields and assign form.id with Car id  
-                $scope.editCar = function(car) {  
-                    
-                    $scope.carForm.name = car.name;  
-                    $scope.carForm.registration = car.registration;  
+                $scope.editCar = function(car) {                 	
+                    $scope.carForm.carName = car.carName;  
+                    $scope.carForm.carRegistration = car.carRegistration;  
                     $scope.carForm.id = car.id;  
+                  
                 };  
            
                 /* Private Methods */  
-                //HTTP GET- get all countries collection  
+                //HTTP GET- get all cars collection  
                 function _refreshCarData() {  
                     $http({  
                         method : 'GET',  
-                        url : 'http://localhost:8080/carfleet/rest/cars'  
+                        url : link +'/getAllCars'
                     }).then(function successCallback(response) {  
                         $scope.cars = response.data;  
                     }, function errorCallback(response) {  
@@ -189,11 +197,11 @@
                  </tr>  
                 <tr>  
                     <td>Car</td>  
-                    <td><input type="text" ng-model="carForm.name" /></td>  
+                    <td><input type="text" ng-model="carForm.carName" /></td>  
                 </tr>  
                 <tr>  
                     <td>Population</td>  
-                    <td><input type="text" ng-model="carForm.registration"  /></td>  
+                    <td><input type="text" ng-model="carForm.carRegistration"  /></td>  
                 </tr>  
                 <tr>  
                     <td colspan="2"><input type="submit" value="Submit" class="blue-button" /></td>  
@@ -211,15 +219,15 @@
    
             <tr ng-repeat="car in cars">  
                  
-    <td> {{ car.name }}</td>  
-    <td >{{ car.registration }}</td>    
+    <td> {{ car.carName }}</td>  
+    <td >{{ car.carRegistration }}</td>    
                   
                 <td><a ng-click="editCar(car)" class="blue-button">Edit</a> | <a ng-click="deleteCar(car)" class="red-button">Delete</a></td>  
             </tr>  
    
         </table>  
-   
-         
+   	
+        
    
          
         
