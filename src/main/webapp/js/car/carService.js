@@ -4,7 +4,7 @@
 	angular.module('app.carService',['app.dataFactory'])
 	.service('carService',carService);
 
-	carService.$inject = ['app.dataFactory'];
+	carService.$inject = ['dataFactory'];
 	function carService(dataFactory){
 		return {
 			getAllCars : getAllCars
