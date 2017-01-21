@@ -15,14 +15,13 @@
 		};
 
 		function getAllData(path){
+			var promise =  
 			$http({
 				method : 'GET',
 				url : link+path
-			}).then(function successCallback(response){
-				return response.data;
-			}, function errorCallback(response){
-				console.log(response.statusText);				
-			})	
+			});
+			
+			return promise;
 		}
 	}
 

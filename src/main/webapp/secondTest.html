@@ -92,7 +92,7 @@
               
         </style>  
     <head>  
-    <body ng-app="app" ng-controller="carController">  
+    <body ng-app="app" ng-controller="carController as vm">  
          <h1>  
            AngularJS Restful web services example using $http  
         </h1>   
@@ -124,10 +124,10 @@
                  
             </tr>  
    
-            <tr ng-repeat="car in cars">  
+            <tr ng-repeat="car in vm.cars">  
                  
     <td> {{ car.carName }}</td>  
-    <td >{{ car.carRegistration }}</td>    
+    <td> {{ car.carRegistration }}</td>    
                   
                 <td><a ng-click="editCar(car)" class="blue-button">Edit</a> | <a ng-click="deleteCar(car)" class="red-button">Delete</a></td>  
             </tr>  
