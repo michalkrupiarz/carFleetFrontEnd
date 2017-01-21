@@ -5,14 +5,10 @@
 		carController.$inject= ['carService'];
 		function carController(carService){
 			var vm = this;
-			vm.cars=[];
-			var promiseCars = carService.getAllCars();
-			promiseCars.then(
-				function (payload){
-					vm.cars = payload.data;
-					
-				});
-			
+			vm.cars = carService.getAllCars().then(function(payload){
+				console.log(payload.data);
+				vm.cars = payload.data;
+			});
 			
 		};
 })();

@@ -12,7 +12,6 @@
 		};
 		function getAllCars(){
 			var path = '/getAllCars';
-
 			return dataFactory.getAllData(path);
 		};
 
@@ -21,11 +20,8 @@
 			return dataFactory.getAllData(path)
 			.then(
 				function (response){
-					return {
-						carName:response.data.carName,
-						carRegistration:response.data.carRegistration,
-						id:response.data.id
-					}
+					return response.data;
+					
 				});
 		}
 		
