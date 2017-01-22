@@ -3,10 +3,11 @@ var app = angular.module('app',['app.controllers','app.carController','app.carSe
 	{
 		$routeProvider
 		.when('/',{
-			templateUrl : ''
+			templateUrl : '/index.html'
 		})
 		.when('/listCars',{
-			templateUrl : 'listCars.html',
-			controller : 'carController'
+			templateUrl : 'js/car/listCars.html',
+			controller : app.carController
+			
 		})
 	})
