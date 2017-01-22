@@ -5,11 +5,10 @@
 		carController.$inject= ['carService'];
 		function carController(carService){
 			var vm = this;
-			vm.cars = carService.getAllCars().then(function(payload){
-				console.log(payload.data);
-				vm.cars = payload.data;
-			});
-			
+
+			carService.getAllCars().then(function(r){
+				vm.cars = r.data;
+			})
 		};
 })();
 		

@@ -10,6 +10,7 @@
 	var link = 'http://localhost:8100/cfsh';
 
 	function dataFactory($http) {
+		var items;
 		return {
 			getAllData : getAllData
 		};
@@ -23,6 +24,7 @@
 			
 			return promise;
 		}
+		
 	}
 
 })();

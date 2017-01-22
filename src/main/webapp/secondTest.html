@@ -2,6 +2,7 @@
   <head>    
     
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
@@ -94,7 +95,7 @@
     <head>  
     <body ng-app="app" ng-controller="carController as vm">  
          <h1>  
-           AngularJS Restful web services example using $http  
+           Car Fleet v 1.0
         </h1>   
         <form ng-submit="submitCar()">  
             <table>  
@@ -107,7 +108,7 @@
                     <td><input type="text" ng-model="carForm.carName" /></td>  
                 </tr>  
                 <tr>  
-                    <td>Population</td>  
+                    <td>Registration</td>  
                     <td><input type="text" ng-model="carForm.carRegistration"  /></td>  
                 </tr>  
                 <tr>  
@@ -118,7 +119,7 @@
         <table>  
             <tr>  
                 
-                <th>CarName</th>  
+                <th>Car name</th>  
                 <th>Registration</th>  
                 <th>Operations</th>  
                  
@@ -132,11 +133,8 @@
                 <td><a ng-click="editCar(car)" class="blue-button">Edit</a> | <a ng-click="deleteCar(car)" class="red-button">Delete</a></td>  
             </tr>  
    
-        </table>  
-   	
-        
-   
-         
-        
+        </table>     
+
+
   </body>  
 </html>  
