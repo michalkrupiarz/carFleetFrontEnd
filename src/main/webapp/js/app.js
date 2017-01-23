@@ -1,4 +1,4 @@
-var app = angular.module('app',['app.controllers','app.carController','app.carService','app.dataFactory','ngRoute']);
+var app = angular.module('app',['app.controllers','app.carController','app.carService','app.dataFactory','ngRoute','ui.bootstrap']);
 	app.config(function($routeProvider)
 	{
 		$routeProvider
@@ -10,5 +10,7 @@ var app = angular.module('app',['app.controllers','app.carController','app.carSe
 			controller : 'carController',
 			controllerAs : 'CC'
 			
+		}).otherwise({
+			templateUrl: '/index.html'
 		})
 	})
