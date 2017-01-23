@@ -3,7 +3,7 @@
 <table>  
             <tr>  
                 
-                <th>Car name</th>  
+                <th>Name</th>  
                 <th>Registration</th>  
                 <th>Operations</th>  
                  
@@ -11,9 +11,9 @@
    
             <tr ng-repeat="car in CC.cars">  
                  
-                <td> here should be car name {{ car.carName }}</td>  
-                <td> here should be car registration {{ car.carRegistration }}</td>    
-               <!--  <td><a ng-click="editCar(car)" class="blue-button">Edit</a> | <a ng-click="deleteCar(car)" class="red-button">Delete</a></td>   -->
+                <td> {{ car.carName }}</td>  
+                <td> {{ car.carRegistration }}</td>    
+               <td><a ng-click="editCar(car)" class="blue-button">Edit</a> | <a ng-click="deleteCar(car)" class="red-button">Delete</a></td> 
             </tr>  
 
 

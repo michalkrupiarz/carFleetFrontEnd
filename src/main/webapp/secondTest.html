@@ -93,7 +93,7 @@
               
         </style>  
     <head>  
-    <body ng-app="app" ng-controller="carController as vm">  
+    <body ng-app="app" ng-controller="carController">  
          <h1>  
            Car Fleet v 1.0
         </h1>   
@@ -125,7 +125,7 @@
                  
             </tr>  
    
-            <tr ng-repeat="car in vm.cars">  
+            <tr ng-repeat="car in cars">  
                  
     <td> {{ car.carName }}</td>  
     <td> {{ car.carRegistration }}</td>    

@@ -7,8 +7,8 @@ var app = angular.module('app',['app.controllers','app.carController','app.carSe
 		})
 		.when('/listCars',{
 			templateUrl : 'js/car/listCars.html',
-			controller : carController,
-			controlerAs : CC
+			controller : 'carController',
+			controllerAs : 'CC'
 			
 		})
 	})
