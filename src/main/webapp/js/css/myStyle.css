@@ -1,0 +1,23 @@
+.index_table{
+	font-family: "Helvetica Neue", Helvetica, sans-serif;  
+           width: 100%;
+           height: 100%;  
+
+}
+
+.index_table td:nth-child(odd){  
+            border: 1px solid gray;  
+            width: 10%; 
+            text-align: left;  
+            padding: 5px 10px;  
+        }  
+.index_table td:nth-child(even){
+          width: 80%;      
+        }
+
+.index_table tr:nth-child(even){
+          height: 80%;
+        }
+.index_table tr:nth-child(odd){
+		background: yellow;
+}

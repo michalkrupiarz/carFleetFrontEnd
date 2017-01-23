@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>UI.Layout : demo </title>
+
+
+    <!-- Le css -->
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/angular-ui/ui-layout/master/src/ui-layout.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+
+  </head>
+  <body>
+
+
+    <!-- Le content... -->
+<div ui-layout class="layout-mock">
+  <header >asd</header>
+  <ui-layout options="{ flow : 'column' }">
+    <sidebar >sad</sidebar>
+    <div >ad</div>
+    <sidebar >asd</sidebar>
+  </ui-layout>
+  <footer >asd</footer>
+</div>
+
+
+
+    <!-- Le vendor... -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+      <script src="https://rawgithub.com/angular-ui/ui-layout/master/src/ui-layout.js"></script>
+      <script src="https://rawgithub.com/angular-ui/ui-layout/bower/ui-layout.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
