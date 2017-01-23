@@ -11,7 +11,13 @@ var app = angular.module('app',['app.controllers','app.carController','app.carSe
 			controller : 'carController',
 			controllerAs : 'CC'
 			
-		}).otherwise({
+		})
+		.when('/selectedCar',{
+			templateUrl : 'js/car/selectedCar.html',
+			controller : 'carController',
+			controllerAs : 'CC'
+		})
+		.otherwise({
 			templateUrl: '/index.html'
 		})
 	})
