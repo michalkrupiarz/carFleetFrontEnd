@@ -13,14 +13,15 @@
 				carRegistration:''
 			}
 		    vm.getCars = function(){
-				carService.gAC().then(function(r){
-					
+				carService.gAC().then(function(r){		
 					vm.cars=r;
 				})
 			}
 			vm.getCars();
-
 			
+			vm.editCar = function (car){
+				carService.addCarToDet(car);
+			};
 			
 		};
 })();

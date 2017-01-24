@@ -13,7 +13,7 @@
                  
                 <td> {{ car.carName }}</td>  
                 <td> {{ car.carRegistration }}</td>    
-               <td><a ng-click="editCar(car)" class="blue-button">Edit</a> | <a ng-click="deleteCar(car)" class="red-button">Delete</a></td> 
+               <td><a ng-href='#selectedCar' ng-click='CC.editCar(car)'>Car Details</a> | <a ng-click="deleteCar(car)" class="red-button">Delete</a></td> 
             </tr>  
 
 

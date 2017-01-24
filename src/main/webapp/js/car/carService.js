@@ -7,13 +7,10 @@
 	carService.$inject = ['dataFactory','$q','$log'];
 	function carService(dataFactory, $q, $log){
 		return {
-			getAllCars : getAllCars,
-			gAC : gAC
+			gAC : gAC,
+			carDet : carDet,
+			addCarToDet : addCarToDet
 		};
-		function getAllCars(){
-			var path = '/getAllCars';
-			return dataFactory.getAllData(path);
-		}
 
 		function gAC(){
 			var deferred = $q.defer();
@@ -27,6 +24,22 @@
 				deferred.reject(error.data);
 			}
 			return deferred.promise;
+		}
+		
+		var carDetList = [];
+		
+		function addCarToDet(car){
+			var tempCarDetList = [];
+			tempCarDetList.push(car);
+			carDetList = tempCarDetList;
+			console.log('this is car Detlist ');
+			console.log(carDetList)
+		}
+		
+		function carDet(){
+			console.log('here should be a car det list ' +carDetList);
+			console.log(carDetList)
+			return carDetList;
 		}
 	}
 		
