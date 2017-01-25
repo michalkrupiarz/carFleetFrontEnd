@@ -12,15 +12,24 @@
 				carRegistration:""
 			};
 			vm.car;
+			vm.carById;
 			vm.getCar = function(){
 				vm.car = carService.carDet();
 				vm.carForm.carName = vm.car[0].carName;
 				vm.carForm.carRegistration = vm.car[0].carRegistration;
 				vm.carForm.id = vm.car[0].id;
-				console.log('carForm');
-				console.log(vm.carForm)
+				
 			}
 			vm.getCar();
+			
+			vm.carById = function(){
+				carService.getCarById().then(function(r){		
+					vm.carById=r;
+					console.log('r');
+					console.log(r)
+				})
+			}
+			vm.carById();
 			
 			
 		};

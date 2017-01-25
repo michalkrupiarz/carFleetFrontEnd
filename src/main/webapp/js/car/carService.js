@@ -9,13 +9,14 @@
 		return {
 			gAC : gAC,
 			carDet : carDet,
-			addCarToDet : addCarToDet
+			addCarToDet : addCarToDet,
+			getCarById : getCarById
 		};
 
 		function gAC(){
 			var deferred = $q.defer();
 			var path = '/getAllCars';
-			dataFactory.getAllData(path)
+			dataFactory.getData(path)
 				.then(cS,cF);
 			function cS(cR){
 				deferred.resolve(cR.data);
@@ -32,14 +33,25 @@
 			var tempCarDetList = [];
 			tempCarDetList.push(car);
 			carDetList = tempCarDetList;
-			console.log('this is car Detlist ');
-			console.log(carDetList)
+			
 		}
 		
 		function carDet(){
-			console.log('here should be a car det list ' +carDetList);
-			console.log(carDetList)
+			
 			return carDetList;
+		}
+		function getCarById(){
+			var deferred = $q.defer();
+			var path = '/getCar/'+carDetList[0].id;
+			dataFactory.getData(path)
+				.then(cS,cF);
+			function cS(cR){
+				deferred.resolve(cR.data);
+			}
+			function cF(error){
+				deferred.reject(error.data);
+			}
+			return deferred.promise;
 		}
 	}
 		

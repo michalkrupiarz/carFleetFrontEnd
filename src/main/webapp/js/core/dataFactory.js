@@ -12,10 +12,11 @@
 	function dataFactory($http) {
 		var items;
 		return {
-			getAllData : getAllData
-		};
+			getData : getData
+			
+		}
 
-		function getAllData(path){
+		function getData(path){
 			var promise =  
 			$http({
 				method : 'GET',
