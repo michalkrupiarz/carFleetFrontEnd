@@ -3,7 +3,7 @@ var app = angular.module('app',['app.controllers','app.carController','app.carSe
 	app.config(function($routeProvider)
 	{
 		$routeProvider
-		.when('/',{
+		.when('/index',{
 			templateUrl : '/index.html'
 		})
 		.when('/listCars',{

@@ -15,7 +15,8 @@
   <script src = "js/car/carService.js"></script>
   <script src = "js/car/carDetCtrl.js"></script>
   <script src = "js/core/dataFactory.js"></script>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://rawgithub.com/angular-ui/ui-layout/master/src/ui-layout.css"/>
    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
   <script src="https://rawgithub.com/angular-ui/ui-layout/master/src/ui-layout.js"></script>
@@ -55,56 +56,82 @@
            width: 100%;
            height: 100%; 
 
-       }  
-  
+       }   
        caption {  
            text-align: left;  
            color: silver;  
            font-weight: bold;  
            text-transform: uppercase;  
            padding: 5px;  
-       }    
-              
-              
+       }
+             
         </style>    
 
   </head>
 
   <body ng-app="app">
-
-  <div id="layoutContainer" layout="row" ng-cloak layout-wrap>
-         <div flex="10" align="center">
-            [flex="10"]
-         </div>
-         <div flex="80" align="center">
-            <div class="btn-group" uib-dropdown is-open="status.isopen">
-      <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
-        Car Menu <span class="caret"></span>
+	<div>
+	</div>
+    
+    
+    
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
       </button>
-      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-        <li role="menuitem"><a href="#listCars">List of Cars</a></li>
-        <li role="menuitem"><a href="#selectedCar">Selected Car</a></li>
-        <li role="menuitem"><a href="#">Something else here</a></li>
-        <li class="divider"></li>
-        <li role="menuitem"><a href="#">Separated link</a></li>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li>
+        	<div class="btn-group" uib-dropdown is-open="status.isopen">
+     			<button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+      		  		Car Menu <span class="caret"></span>
+     			</button>
+      			<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+       				<li role="menuitem"><a href="#listCars">List of Cars</a></li>
+       				<li role="menuitem"><a href="#selectedCar">Selected Car</a></li>
+        			<li role="menuitem"><a href="#">Something else here</a></li>
+        			<li class="divider"></li>
+        			<li role="menuitem"><a href="#">Separated link</a></li>
+      			</ul>
+   		 	</div>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
-         </div>
-         <div flex="10" class="green box">
-            [flex="10"]
-         </div>
-         <div flex="10" class="green box">
-            [flex="33"]
-         </div>
-         <div flex="80" align="center">
-            <div ng-view></div>
-         </div>
-         <div flex="10" class="blue box">
-            [flex="50"]
-         </div>
-      </div>
-
-  
+  </div>
+</nav>
+    
+     
+    <div class="row">
+  		<div class="col-md-12">header</div>
+  		<div class="col-md-2">menu left</div>
+		<div class="col-md-8">
+			
+		</div>
+		
+		<div class="col-md-2">menu right</div>
+		
+		<div class="col-md-2">separator</div>
+		<div class="col-md-6">separator</div>
+		<div class="col-md-2">separator</div>
+		<div class="col-md-2">left</div>
+		<div class="col-md-8"><div ng-view></div></div>
+		<div class="col-md-2">right </div>
+		
+		<div class="col-md-12">footer</div>
+  		
+	</div>
 </body>
 
 </html>
