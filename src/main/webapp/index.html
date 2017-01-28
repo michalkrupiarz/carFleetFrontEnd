@@ -51,12 +51,6 @@
     border:1px solid #CD5C5C  
            }        
   
-       table {  
-           font-family: "Helvetica Neue", Helvetica, sans-serif;  
-           width: 100%;
-           height: 100%; 
-
-       }   
        caption {  
            text-align: left;  
            color: silver;  
@@ -70,11 +64,7 @@
   </head>
 
   <body ng-app="app">
-	<div>
-	</div>
-    
-    
-    
+  <div>      
     <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -90,14 +80,12 @@
         <li>
         	<div class="btn-group" uib-dropdown is-open="status.isopen">
      			<button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
-      		  		Car Menu <span class="caret"></span>
+      		  		Cars <span class="caret"></span>
      			</button>
       			<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
        				<li role="menuitem"><a href="#listCars">List of Cars</a></li>
-       				<li role="menuitem"><a href="#selectedCar">Selected Car</a></li>
-        			<li role="menuitem"><a href="#">Something else here</a></li>
-        			<li class="divider"></li>
-        			<li role="menuitem"><a href="#">Separated link</a></li>
+       				<li role="menuitem"><a href="#addCar">Add Car</a></li>
+        			<li role="menuitem"><a href="#searchCar">Search for a Car</a></li>
       			</ul>
    		 	</div>
         </li>
@@ -112,26 +100,36 @@
   </div>
 </nav>
     
-     
-    <div class="row">
-  		<div class="col-md-12">header</div>
-  		<div class="col-md-2">menu left</div>
-		<div class="col-md-8">
-			
-		</div>
+<div  class="container-fluid text-center">    
+  <div class="row content mainView" style="height:100%">
+    <div class="col-sm-2 sidenav">
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+    </div>
+    <div class="col-sm-8 text-center"> 
+    
+    <div ng-view></div>
+    
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well"> 
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+</div>
+    
 		
-		<div class="col-md-2">menu right</div>
 		
-		<div class="col-md-2">separator</div>
-		<div class="col-md-6">separator</div>
-		<div class="col-md-2">separator</div>
-		<div class="col-md-2">left</div>
-		<div class="col-md-8"><div ng-view></div></div>
-		<div class="col-md-2">right </div>
-		
-		<div class="col-md-12">footer</div>
-  		
-	</div>
 </body>
 
 </html>

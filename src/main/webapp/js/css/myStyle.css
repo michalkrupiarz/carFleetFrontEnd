@@ -4,18 +4,18 @@
     }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
+    .row.content {height: 100%}
     
     /* Set gray background color and 100% height */
     .sidenav {
       padding-top: 20px;
-      background-color: #f1f1f1;
+      background-color:#5a5656;
       height: 100%;
     }
     
     /* Set black background color, white text and some padding */
     footer {
-      background-color: #555;
+      background-color: #0a0808;
       color: white;
       padding: 15px;
     }
@@ -29,7 +29,7 @@
       .row.content {height:auto;} 
     }
 .btn {
-    padding: 14px 24px;
+	padding: 14px 24px;
     border: 0 none;
     font-weight: 700;
     letter-spacing: 1px;
@@ -56,5 +56,39 @@
 .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, 
 .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover{
 	background: #6a6a6a;
-    box-shadow: none;s
+    box-shadow: none;
+}
+.dropdown-menu, .dropdown-menu>li>a{
+    background-color: #6a6a6a;
+    color: white;
+}
+.lCars{
+	width:80%;	
+	margin-left:auto;
+	margin-right:auto;
+}
+.lCars th{
+	background:#6a6a6a;
+	color: white;	
+}
+.scT{
+	width:80%;	
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+}
+.scT th{
+	background:#6a6a6a;
+	color: white;	
+	text-align: center;
+} 
+.scT tr {
+	height: 20px;	
+		
+}
+.scT tr:hover{
+	background-color: #f1f1f1;
+}
+.mainView{
+	background-color: #9b9b9b;
 }

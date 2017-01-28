@@ -1,15 +1,23 @@
 <div>
-
-This is selected Car.
-
-
-{{CDC.car}}
-
-Car Name: 
-{{CDC.carForm.carName}}
-
-car taken form db
-{{CDC.carById.carName}}
-
-Up here it lies
+<div style="height: 30px">
+</div>
+<table class="scT" >
+	<tr>
+		<th>Field Nameh</th>
+		<th>Field Value</th>
+		<th>Actions</th>
+	</tr>
+	<tbody>
+		<tr>
+			<td>Name</td>
+			<td>{{CDC.carById.carName}}</td>
+			<td>Edit</td>
+		</tr>
+		<tr>
+			<td>Registration</td>
+			<td>{{CDC.carById.carRegistration}}</td>
+			<td>Edit</td>
+		</tr>
+	</tbody>
+</table>
 </div>
