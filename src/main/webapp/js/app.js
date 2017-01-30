@@ -1,5 +1,5 @@
 var app = angular.module('app',['app.controllers','app.carController','app.carService','app.dataFactory','ngRoute','ui.bootstrap'
-	,'ui.layout','ngMaterial','app.carDetCtrl']);
+	,'ui.layout','ngMaterial','app.carDetCtrl','ngMessages']);
 	app.config(function($routeProvider)
 	{
 		$routeProvider

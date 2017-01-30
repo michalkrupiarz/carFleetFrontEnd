@@ -15,7 +15,10 @@
                  
                 <td> {{ car.carName }}</td>  
                 <td> {{ car.carRegistration }}</td>    
-               <td><a ng-href='#selectedCar' ng-click='CC.editCar(car)'>Car Details</a> | <a ng-click="deleteCar(car)" class="red-button">Delete</a></td> 
+               <td><a ng-href='#selectedCar' ng-click='CC.editCar(car)' class="blue-button">Car Details</a> |
+                <md-button class="md-primary md-raised" ng-click="CC.showConfirm($event)">
+     Delete Dialog
+    </md-button></td> 
             </tr>  
 
 
